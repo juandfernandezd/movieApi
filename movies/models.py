@@ -3,13 +3,13 @@ from django.db import models
 
 # Create your models here.
 class Movie(models.Model):
-    name = models.CharField(max_length=150)
-    image = models.TextField()
-    description = models.TextField()
+    title = models.CharField(max_length=150)
+    image_path = models.TextField(default='')
+    description = models.TextField(default='')
 
     @classmethod
-    def create(cls, name, image, description):
-        movie = cls(name=name, image=image, description=description)
+    def create(cls, title, image_path, description):
+        movie = cls(title=title, image_path=image_path, description=description)
         movie.save()
         return movie
 
