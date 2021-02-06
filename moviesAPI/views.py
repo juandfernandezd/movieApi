@@ -18,4 +18,5 @@ class MovieViewSet(ModelViewSet):
 class ScoreViewSet(ModelViewSet):
     queryset = Score.objects.all().order_by('id')
     serializer_class = ScoreSerializer
+    filter_fields = ('movie__id',)
     permission_classes = [permissions.IsAuthenticated]

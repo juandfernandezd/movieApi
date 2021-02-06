@@ -15,4 +15,3 @@ class ScoreSerializer(ModelSerializer):
     class Meta:
         model = Score
         fields = ('points', 'movie',)
-        filter_fields = ('movie__id', )
