@@ -1,5 +1,5 @@
 from decouple import config
-from movies.models import Movie
+from moviesAPI.models import Movie
 from random import randint
 import requests
 

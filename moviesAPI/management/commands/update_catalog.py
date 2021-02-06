@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-from movies.functions import get_movies
+from moviesAPI.functions import get_movies
 
 
 class Command(BaseCommand):

@@ -15,3 +15,17 @@ class Movie(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Score(models.Model):
+    points = models.FloatField()
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='scores')
+
+    @classmethod
+    def create(cls, points, movie):
+        score = cls(points=points, movie=movie)
+        score.save()
+        return score
+
+    def __str__(self):
+        return self.movie.title + ' ' + self.points
